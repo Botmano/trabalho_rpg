@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#define MAX_PERSONAGENS_COMBATE 10;
 
 typedef struct personagem
 {
@@ -27,8 +28,14 @@ Personagem criar_personagem(char nome[30], int dado, int nivel){
   p.iniciativa = 0;
   return p;
 }
+void iniciar_combat(Personagem lista_em_combate[]){
+  
+}
 
 int main(){
+  Personagem lista_em_combate[MAX_PERSONAGENS_COMBATE];
+
+
   srand(time(NULL));
 }
 
