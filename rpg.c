@@ -3,6 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #define MAX_PERSONAGENS_COMBATE 10
 
 typedef struct personagem
@@ -22,6 +23,18 @@ Personagem criar_personagem(char nome[30], int dado, int nivel){
   p.iniciativa = 0;
   p.em_combate = false;
   return p;
+}
+
+void insertion_sort(Personagem v[], int qtd_atual){
+    for(int i = 1; i<qtd_atual;i++){
+        Personagem key = v[i];
+        int j = i-1;
+        while(j >= 0 && v[j].iniciativa < key.iniciativa){
+            v[j+1]= v[j];
+            j = j-1;
+        }
+        v[j+1] = key;
+    }
 }
 
 void trocar(Personagem* a, Personagem* b){
@@ -111,6 +124,29 @@ void adicionar_personagem_combate(Personagem lista_em_combate[], int* qtd_atual)
   definir_turnos(lista_em_combate,*qtd_atual);
 
 }
+
+void remover_personagem(Personagem lista_em_combate[], int* qtd_atual, char nome_ser_removido[30]){
+  int index_nome = -1;
+  for(int i = 0; i<*qtd_atual;i++){
+    if(strcmp(nome_ser_removido, lista_em_combate[i].nome)== 0){
+      index_nome = i;
+      break;
+    }
+  }
+
+  if (index_nome == -1){
+    printf("Não há personagem com esse nome \n");
+    return;
+  }
+
+  for(int i = index_nome; i<*qtd_atual-1; i++){
+    lista_em_combate[i] = lista_em_combate[i+1];
+  }
+  (*qtd_atual)--;
+
+  insertion_sort(lista_em_combate, *qtd_atual);
+}
+
 void avancar_turno(Personagem lista_em_combat[], int num_participantes);
 
 
