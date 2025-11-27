@@ -49,7 +49,7 @@ int particionar(Personagem lista[], int max, int min){
 void quicksort(Personagem lista[], int min, int max){
   if(min < max){
     int index_pivo = particionar(lista, max, 0);
-    quicksort(lista, 0, index_pivo-1);
+    quicksort(lista, min, index_pivo-1);
     quicksort(lista, index_pivo+1, max);
   }
 }
@@ -69,14 +69,14 @@ void iniciativas_dos_personagens(Personagem participantes[], int num_personagens
 }
 
 void definir_turnos(Personagem participantes[], int num_personagens){
-  quicksort(participantes, 0, num_personagens);
+  quicksort(participantes, 0, num_personagens-1);
 }
 
 void iniciar_combate(Personagem lista_em_combate[], int num_participantes){
     iniciativas_dos_personagens(lista_em_combate, num_participantes);
     definir_turnos(lista_em_combate, num_participantes);
 
-    for(int i; i<num_participantes; i++){
+    for(int i=0; i<num_participantes; i++){
       printf("Posição %d, personagem:%s \n", i+1, lista_em_combate[i].nome);
     }
 }
