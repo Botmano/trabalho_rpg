@@ -73,26 +73,58 @@ void definir_turnos(Personagem participantes[], int num_personagens){
 }
 
 void iniciar_combate(Personagem lista_em_combate[], int num_participantes){
+
+    for(int i = 0; i<num_participantes; i++){
+      lista_em_combate[i].em_combate = true;
+    }
+
     iniciativas_dos_personagens(lista_em_combate, num_participantes);
     definir_turnos(lista_em_combate, num_participantes);
 
     for(int i=0; i<num_participantes; i++){
-      printf("Posição %d, personagem:%s \n", i+1, lista_em_combate[i].nome);
+      printf("Posicao %d, personagem:%s \n", i+1, lista_em_combate[i].nome);
     }
 }
+
+void adicionar_personagem_combate(Personagem lista_em_combate[], int* qtd_atual){
+  if(*qtd_atual == MAX_PERSONAGENS_COMBATE){
+    printf("Número máximo de participantes em combate");
+    return;
+  }
+  printf("Digite o nome do personagem: ");
+  char nome[30];
+  int nivel;
+  int dado;
+  scanf("%s\n",&nome);
+  printf("Digite o nivel do personagem: ");
+  scanf("%d\n", &nivel);
+  printf("Digite o dado do personagem: ");
+  scanf("%d\n", &dado);
+
+  Personagem personagem_adicionado = criar_personagem(nome, dado, nivel);
+  personagem_adicionado.em_combate = true;
+  calcular_iniciativa(&personagem_adicionado); //Calcula a iniciativa para ele entrar em combate;
+
+  lista_em_combate[*qtd_atual] = personagem_adicionado;
+  *qtd_atual++;
+
+  definir_turnos(lista_em_combate,*qtd_atual);
+
+}
+void avancar_turno(Personagem lista_em_combat[], int num_participantes);
+
 
 int main(){
   srand(time(NULL)); //Inicialização do timer para ser usado no rand
 
   Personagem personagens[MAX_PERSONAGENS_COMBATE];
   int qtd_atual = 0;
-    // 2. Adicionar personagens
+
     personagens[qtd_atual++] = criar_personagem("Guerreiro", 20, 5); // d20 + 5
     personagens[qtd_atual++] = criar_personagem("Mago", 6, 2);       // d6 + 2
     personagens[qtd_atual++] = criar_personagem("Goblin", 20, 1);    // d20 + 1
-    personagens[qtd_atual++] = criar_personagem("Dragão", 20, 10);   // d20 + 10
+    personagens[qtd_atual++] = criar_personagem("Dragao", 20, 10);   // d20 + 10
 
-    // 3. Iniciar a lógica de combate
     iniciar_combate(personagens, qtd_atual);
 
     return 0;
