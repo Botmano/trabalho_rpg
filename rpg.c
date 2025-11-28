@@ -166,6 +166,7 @@ void avancar_turno(Personagem lista_em_combate[], int num_participantes){
   
 }
 
+void teste_branch();
 
 int main(){
   srand(time(NULL)); //Inicialização do timer para ser usado no rand
