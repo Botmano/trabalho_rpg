@@ -5,11 +5,11 @@
 ##Descrição
 Um trabalho feito para faculdade onde o objetivo é testar os conhecimentos sobre estrutura de dados e seus métodos de ordenação, neste caso foram utilizados listas e structs, além de também utilizar os métodos de ordenação quicksort e insertion sort.
 ## Funcionalidades:
-# ⚔️ Gerenciador de Combate RPG em C
+#  Gerenciador de Combate RPG em C
 
 Este projeto é um sistema de gerenciamento de turnos para RPGs de mesa, desenvolvido em C. Ele permite controlar a ordem de iniciativa, adicionar e remover participantes dinamicamente e rolar dados.
 
-## 📂 Estrutura do Projeto
+##  Estrutura do Projeto
 
 O código foi organizado em módulos para facilitar a manutenção e escalabilidade:
 
@@ -34,13 +34,13 @@ O "coração" do programa, onde as regras de negócio são aplicadas.
 * **Remover Personagem:** Remove participantes abatidos e reorganiza a lista utilizando *Insertion Sort* para manter a integridade da fila.
 * **Avançar Turno:** Rola novas iniciativas para todos os ativos e redefine a ordem do turno.
 
-## 🛠️ Conceitos Técnicos Aplicados
+##  Conceitos Técnicos Aplicados
 * **Structs e Typedef:** Para modelagem de dados complexos.
 * **Ponteiros:** Para manipulação eficiente de memória e passagem de parâmetros por referência.
 * **Alocação de Vetores:** Gerenciamento de listas de participantes.
 * **Algoritmos de Busca e Ordenação:** Uso prático de QuickSort e Insertion Sort.
 
-## 🚀 Como Rodar
+##  Como Rodar
 Compile o projeto utilizando o GCC:
 ```bash
 gcc rpg.c personagem.c utilidades.c combate.c -o rpg_combate
