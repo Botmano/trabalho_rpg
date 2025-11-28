@@ -75,7 +75,7 @@ int main(){
     break;
   case 4:
     printf("Combate finalizado\n");
-    monstrar_ordem(personagens, qtd_atual);
+    mostrar_ordem(personagens, qtd_atual);
     break;
   
   default:

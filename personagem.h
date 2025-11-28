@@ -13,7 +13,7 @@ typedef struct personagem
 }Personagem;
 
 Personagem criar_personagem(char nome[30], int dado, int nivel);
-void monstrar_ordem(Personagem lista[], int num_participantes);
+void mostrar_ordem(Personagem lista[], int num_participantes);
 
 #endif
 

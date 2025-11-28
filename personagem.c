@@ -14,7 +14,7 @@ Personagem criar_personagem(char nome[30], int dado, int nivel){
   p.em_combate = false;
   return p;
 }
-void monstrar_ordem(Personagem lista[], int num_participantes){
+void mostrar_ordem(Personagem lista[], int num_participantes){
   printf("\n---------------------------\n");
   for (int i = 0; i < num_participantes; i++)
   {

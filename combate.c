@@ -28,7 +28,7 @@ void iniciar_combate(Personagem lista_em_combate[], int num_participantes){
     iniciativas_dos_personagens(lista_em_combate, num_participantes);
     definir_turnos(lista_em_combate, num_participantes);
 
-    monstrar_ordem(lista_em_combate, num_participantes);
+    mostrar_ordem(lista_em_combate, num_participantes);
 }
 
 void adicionar_personagem_combate(Personagem lista_em_combate[], int* qtd_atual){
@@ -57,7 +57,7 @@ void adicionar_personagem_combate(Personagem lista_em_combate[], int* qtd_atual)
 
   definir_turnos(lista_em_combate,*qtd_atual);
   printf("Personagem %s entrou no combate com iniciativa %d!\n", nome, personagem_adicionado.iniciativa);
-  monstrar_ordem(lista_em_combate, *qtd_atual);
+  mostrar_ordem(lista_em_combate, *qtd_atual);
 }
 
 void remover_personagem(Personagem lista_em_combate[], int* qtd_atual, char nome_ser_removido[30]){
@@ -81,12 +81,12 @@ void remover_personagem(Personagem lista_em_combate[], int* qtd_atual, char nome
   (*qtd_atual)--;
 
   insertion_sort(lista_em_combate, *qtd_atual);
-  monstrar_ordem(lista_em_combate, *qtd_atual);
+  mostrar_ordem(lista_em_combate, *qtd_atual);
 }
 
 void avancar_turno(Personagem lista_em_combate[], int num_participantes){
   iniciativas_dos_personagens(lista_em_combate, num_participantes);
   definir_turnos(lista_em_combate, num_participantes);
-  monstrar_ordem(lista_em_combate, num_participantes);
+  mostrar_ordem(lista_em_combate, num_participantes);
   
 }
