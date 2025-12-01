@@ -2,7 +2,7 @@
 ## <img width="100" height="165" alt="UFG_logo svg" src="https://github.com/user-attachments/assets/155134e7-2a91-4ca7-8841-cadd8b16f913" />
 ### Alunos: Luiz Augusto Correa Melo, Matrícula:202403033; Sofia Viana Mendes, Matrícula: 202403053.
 ### Professor: Bruno Brandão Soares Martins
-##Descrição
+## Descrição
 Um trabalho feito para faculdade onde o objetivo é testar os conhecimentos sobre estrutura de dados e seus métodos de ordenação, neste caso foram utilizados listas e structs, além de também utilizar os métodos de ordenação quicksort e insertion sort.
 ## Funcionalidades:
 #  Gerenciador de Combate RPG em C
@@ -43,5 +43,5 @@ O "coração" do programa, onde as regras de negócio são aplicadas.
 ##  Como Rodar
 Compile o projeto utilizando o GCC:
 ```bash
-gcc rpg.c personagem.c utilidades.c combate.c -o rpg_combate
+gcc rpg.c personagem.c utils.c combate.c -o rpg_combate
 ./rpg_combate
