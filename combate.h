@@ -1,7 +1,7 @@
 #ifndef COMBATE_H
 #define COMBATE_H
 #include "personagem.h"
-#define MAX_PERSONAGENS_COMBATE 10
+#define MAX_PERSONAGENS_COMBATE 50
 
 void iniciar_combate(Personagem lista_em_combate[], int num_participantes);
 void adicionar_personagem_combate(Personagem lista_em_combate[], int* qtd_atual);
